@@ -1,0 +1,23 @@
+name: Hello World Pipeline
+
+on: 
+  push:
+    branches:
+      - main
+  pull_request:
+    branches:
+      - main
+
+jobs:
+  hello-world:
+    runs-on: ubuntu-latest
+
+    steps:
+    - name: Checkout code
+      uses: actions/checkout@v2
+
+    - name: Print Hello World
+      run: echo "Hello, World!"
+
+    - name: Always Pass
+      run: echo "This step will always pass!"
