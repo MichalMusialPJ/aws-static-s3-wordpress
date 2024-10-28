@@ -1,6 +1,6 @@
 # Define an S3 bucket for storing WordPress files
 resource "aws_s3_bucket" "wordpress_bucket" {
-  bucket = "my-wordpress-content-bucket" # Upewnij się, że nazwa jest unikalna globalnie
+  bucket = "my-s3-wiadro-wordpress-420" 
 
   tags = {
     Name        = "WordPressContentBucket"
@@ -13,7 +13,7 @@ resource "aws_s3_bucket_acl" "wordpress_bucket_acl" {
   acl = "private"
 }
 
-# # Enable versioning for the bucket
+# Enable versioning for the bucket
 # resource "aws_s3_bucket_versioning" "versioning" {
 #   bucket = aws_s3_bucket.wordpress_bucket.id
 
