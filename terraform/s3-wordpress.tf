@@ -1,6 +1,6 @@
 # Define an S3 bucket for storing WordPress files
 resource "aws_s3_bucket" "wordpress_bucket" {
-  bucket = "my-s3-wiadro-wordpress-420" 
+  bucket = "my-s3-wiadro-wordpress-420"
 
   tags = {
     Name        = "WordPressContentBucket"
@@ -10,7 +10,7 @@ resource "aws_s3_bucket" "wordpress_bucket" {
 
 resource "aws_s3_bucket_acl" "wordpress_bucket_acl" {
   bucket = aws_s3_bucket.wordpress_bucket.id
-  acl = "private"
+  acl    = "private"
 }
 
 # Enable versioning for the bucket
@@ -30,9 +30,9 @@ resource "aws_s3_bucket_policy" "bucket_policy" {
     Version = "2012-10-17",
     Statement = [
       {
-        Effect = "Allow",
+        Effect    = "Allow",
         Principal = "*",
-        Action   = [
+        Action = [
           "s3:GetObject",
           "s3:PutObject"
         ],
