@@ -1,4 +1,4 @@
-FROM wordpress:php-fpm
+FROM wordpress:php8.1-fpm-alpine
 
 # temporary env variables
 ENV WORDPRESS_DB_HOST=db:3306
