@@ -3,7 +3,7 @@ name: Hello World Pipeline
 on: 
   push:
     branches:
-      - main
+      - '*'
   pull_request:
     branches:
       - main
@@ -21,3 +21,6 @@ jobs:
 
     - name: Always Pass
       run: echo "This step will always pass!"
+
+    - name: Check Terraform formatting
+      run: terraform fmt -check
